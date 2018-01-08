@@ -62,11 +62,6 @@
             <br>Germany
             <br>
           </p>
-          <p>
-            <abbr title="Phone">P</abbr>: (+49) 441-9722 425
-          </p>
-          <p>
-          </p>
         </div>
       </div>
       <!-- /.row -->
@@ -86,8 +81,8 @@
             </div>
             <div class="control-group form-group">
               <div class="controls">
-                <label>Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                <label>Subject:</label>
+                <input type="text" class="form-control" id="subject" required data-validation-required-message="Please enter a subject.">
               </div>
             </div>
             <div class="control-group form-group">
@@ -102,6 +97,7 @@
                 <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
               </div>
             </div>
+            <input type="text" name="gotcha" style="display:none"/>
             <div id="success"></div>
             <!-- For success/fail messages -->
             <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>

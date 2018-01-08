@@ -10,7 +10,8 @@ $(function() {
       // get values from FORM
       var name = $("input#name").val();
       var email = $("input#email").val();
-      var phone = $("input#phone").val();
+      var subject = "<CSC-Workshop> "+$("input#subject").val();
+      var gotcha = $("input#gotcha").val();      
       var message = $("textarea#message").val();
       var firstName = name; // For Success/Failure Message
       // Check for white space in name for Success/Fail message
@@ -20,14 +21,16 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
-        url: "././mail/contact_me.php",
+        url: "https://formspree.io/csc-Workshop@offis.de",
         type: "POST",
         data: {
           name: name,
-          phone: phone,
+          _subject: subject,
+          _gotcha: gotcha,
           email: email,
           message: message
         },
+        dataType: "json",
         cache: false,
         success: function() {
           // Success message
